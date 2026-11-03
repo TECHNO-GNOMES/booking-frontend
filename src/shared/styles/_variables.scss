@@ -10,8 +10,17 @@ $color-bg-yellow: #F8DA75;
 $color-bg-plum: #764678;
 $color-bg-grey: #333333;
 
+// Градиент кнопки
+$gradient-btn: linear-gradient(100deg, #f6a0ba 0%, #c67dd6 50%, #6586ef 100%);
+
 // Цвета текстов
 $color-text-dark: Dark;
 $color-text-light: Light;
 $color-text-ultralight: Ultralight;
 $color-text-accent: Accent;
+
+
+// Input dropdown
+$input-bg-hover: #ECF4FD;
+$input-text-color: #0066CC;
+$input-disabled: #C6C6CC;
