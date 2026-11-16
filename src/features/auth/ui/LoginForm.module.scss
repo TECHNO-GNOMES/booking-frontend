@@ -1,3 +1,5 @@
+@use '@/shared/styles/variables';
+
 .formContainer {
   max-width: 420px;
   width: 100%;
@@ -97,7 +99,7 @@
   padding: 15px;
   border-radius: 30px;
   border: none;
-  background: linear-gradient(90deg, #e0a0b0, #8a7cf0);
+  background: $gradient-btn;
   color: white;
   font-size: 16px;
   font-weight: bold;
