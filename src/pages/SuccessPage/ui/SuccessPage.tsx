@@ -4,8 +4,10 @@ function SuccessPage() {
     return (
         <>
             Вы успешено зарегистрировались
-            <a href="/">домой</a>
+            <Link to="/user">В личный кабинет</Link>
+            <Link to="/">На главную</Link>
         </>
+
     )
 }
 export default SuccessPage

@@ -24,29 +24,31 @@ function Header() {
                     </div>
                 </div>
                 <nav className={styles.headerNav}>
-                    <Link path='/favourites' className={styles.navButton}>
+                    <Link to='/favourites' className={styles.navButton}>
                         <HeartIcon />
                     </Link>
-                    <Link path='/chat' className={styles.navButton}>
+                    <Link to='/chat' className={styles.navButton}>
                         <MessageIcon />
                     </Link>
-                    <Link path='/profile' className={styles.navButton}>
+                    <Link to='/login' className={styles.navButton}>
                         <ProfileIcon />
                     </Link>
                 </nav>
             </header>
             <header className={styles.headerBottom}>
                 <div className={styles.headerBottomLogo}>
-                    <img src={LogoImg} alt="Logo" />
+                    <Link to="/">
+                        <img src={LogoImg} alt="Logo" />
+                    </Link>
                 </div>
                 <div className={styles.headerBottomLinks}>
-                    <Link path='/about' className={styles.links}>О платформе</Link>
-                    <Link path='/places' className={styles.links}>Площадкам</Link>
-                    <Link path='/guests' className={styles.links}>Гостям</Link>
+                    <Link to='/about' className={styles.links}>О платформе</Link>
+                    <Link to='/places' className={styles.links}>Площадкам</Link>
+                    <Link to='/guests' className={styles.links}>Гостям</Link>
                 </div>
                 <div className={styles.headerBottomActions}>
-                    <Link path='/add-request' className={styles.action}>+ Разместить запрос</Link>
-                    <Link path='/add-place' className={styles.action}>+ Добавить место</Link>
+                    <Link to='/add-request' className={styles.action}>+ Разместить запрос</Link>
+                    <Link to='/add-place' className={styles.action}>+ Добавить место</Link>
                 </div>
             </header>
 
