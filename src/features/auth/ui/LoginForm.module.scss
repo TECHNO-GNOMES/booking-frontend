@@ -1,4 +1,12 @@
 @use '@/shared/styles/variables';
+@use '@/app/styles/global.scss';
+
+.formWrapper {
+    display: flex;
+    justify-content: center;
+    margin: 150px auto;
+    width: 100%;
+}
 
 .formContainer {
   max-width: 420px;

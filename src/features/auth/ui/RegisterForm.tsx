@@ -28,53 +28,55 @@ export const RegisterForm = () => {
         <div className={styles.debugBox}>
           <strong>Тестовый режим:</strong> код <span className={styles.debugCode}>{debugCode}</span>
         </div>
-        
+
         <div className={styles.buttonsRow}>
-           <Link 
-              to={`/verify-email?email=${email}&code=${debugCode}`} 
-              className={styles.btnPrimary}
-           >
-              Перейти к вводу кода
-           </Link>
+          <Link
+            to={`/verify-email?email=${email}&code=${debugCode}`}
+            className={styles.btnPrimary}
+          >
+            Перейти к вводу кода
+          </Link>
         </div>
       </div>
     );
   }
 
   return (
-    <div className={styles.formContainer}>
-      <h1 className={styles.title}>РЕГИСТРАЦИЯ</h1>
-      <p className={styles.subtitle}>Чтобы создать аккаунт, заполните поля ниже.</p>
-      
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <div className={styles.inputGroup}>
-          <input 
-            type="email" 
-            placeholder="Email" 
-            value={email} 
-            onChange={e => setEmail(e.target.value)} 
-            className={styles.input}
-          />
-          <span className={styles.icon}>✉️</span>
-        </div>
+    <div className={styles.formWrapper}>
+      <div className={styles.formContainer}>
+        <h1 className={styles.title}>РЕГИСТРАЦИЯ</h1>
+        <p className={styles.subtitle}>Чтобы создать аккаунт, заполните поля ниже.</p>
 
-        <div className={styles.inputGroup}>
-          <input 
-            type="password" 
-            placeholder="Пароль" 
-            value={password} 
-            onChange={e => setPassword(e.target.value)} 
-            className={styles.input}
-          />
-          <span className={styles.icon}>🔑</span>
-        </div>
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <div className={styles.inputGroup}>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              className={styles.input}
+            />
+            <span className={styles.icon}>✉️</span>
+          </div>
 
-        <div className={styles.buttonsRow}>
-          <button type="submit" disabled={loading} className={styles.btnPrimary}>
-            {loading ? 'Загрузка...' : 'Зарегистрироваться'}
-          </button>
-        </div>
-      </form>
+          <div className={styles.inputGroup}>
+            <input
+              type="password"
+              placeholder="Пароль"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              className={styles.input}
+            />
+            <span className={styles.icon}>🔑</span>
+          </div>
+
+          <div className={styles.buttonsRow}>
+            <button type="submit" disabled={loading} className={styles.btnPrimary}>
+              {loading ? 'Загрузка...' : 'Зарегистрироваться'}
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

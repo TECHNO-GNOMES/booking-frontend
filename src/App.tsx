@@ -19,6 +19,11 @@ function App() {
           <Route path='/login' element={<LoginPage/ >}></Route>
           <Route path='/404' element={<NotFoundPage />} />
           <Route path='/success' element={<SuccessPage/>}/>
+          {/* роуты для навигации */}
+          {/* <Route path='/about' element={<AboutPage />}/> */}
+          {/* <Route path="/guests" element={<GuestsPage/>}/> */}
+          {/* <Route path="/places" element={<PlacesPage/>}/> */}
+
         </Routes>
       </BrowserRouter>
     </>

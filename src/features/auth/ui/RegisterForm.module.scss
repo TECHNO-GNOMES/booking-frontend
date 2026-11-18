@@ -1,21 +1,11 @@
 @use '@/shared/styles/variables';
+@use '@/app/styles/global.scss';
 
-.pageWrapper {
+.formWrapper {
     display: flex;
-    flex-direction: row;
-    min-height: 100%;
-    height: 100%;
     justify-content: center;
-    background-color: #fff;
-}
-
-.formSide {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: baseline;
-    padding: 40px;
+    margin: 150px auto;
+    width: 100%;
 }
 
 .formContainer {

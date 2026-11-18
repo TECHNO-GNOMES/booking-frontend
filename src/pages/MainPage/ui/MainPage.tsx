@@ -1,8 +1,8 @@
 function MainPage () {
     return (
-        <>
+        `
             Основная страница
-        </>
+        `
     )
 }
 
