@@ -7,16 +7,15 @@ export const useLogin = () => {
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
-  const login = async (email: string, password: string) => {
+  const login = async (email: string, password: string, phone: string) => {
     setLoading(true);
     setError(null);
     try {
-      const data = await authApi.login(email, password);
-      
-      localStorage.setItem('access_token', data.access_token);
+      const data = await authApi.login(email, password, phone);
+      localStorage.setItem('access_token', data.accessToken);
       navigate('/');
     } catch (err: any) {
-      setError(err.message || 'Ошибка авторизации');
+      setError(err.message || 'Ошибка входа');
     } finally {
       setLoading(false);
     }

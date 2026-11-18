@@ -10,11 +10,12 @@ export const RegisterForm = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (!email || !password || password.length < 4) {
-      alert("Заполните поля (пароль > 4 символов)");
+    if (!email || !password || password.length < 7) {
+      alert("Заполните поля (пароль > 7 символов)");
       return;
     }
     register(email, password);
+
   };
 
   if (debugCode) {

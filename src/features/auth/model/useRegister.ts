@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { authApi } from '@/entities/User/api/authApi';
+import { useNavigate } from 'react-router-dom';
 
 export const useRegister = () => {
   const [loading, setLoading] = useState(false);
   const [debugCode, setDebugCode] = useState<string | null>(null);
   const [email, setEmail] = useState('');
+  const navigate = useNavigate()
 
   const register = async (userEmail: string, password: string) => {
     setLoading(true);
@@ -16,7 +18,7 @@ export const useRegister = () => {
       }
       
       setEmail(userEmail);
-
+      navigate('/success')
     } catch (err) {
       alert('Ошибка регистрации');
     } finally {

@@ -4,6 +4,7 @@ import { MainLayout } from "@/app/MainLayout"
 import { NotFoundPage } from '@/pages/NotFoundPage'
 import { RegistrationPage } from '@/pages/RegistrationPage'
 import { LoginPage } from '@/pages/LoginPage'
+import { SuccessPage } from '@/pages/SuccessPage'
 
 
 function App() {
@@ -12,13 +13,12 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<MainLayout />} >
-
             <Route index element={<MainPage />} />
-        
           </Route>
           <Route path='/registration' element={<RegistrationPage/ >}></Route>
           <Route path='/login' element={<LoginPage/ >}></Route>
           <Route path='/404' element={<NotFoundPage />} />
+          <Route path='/success' element={<SuccessPage/>}/>
         </Routes>
       </BrowserRouter>
     </>

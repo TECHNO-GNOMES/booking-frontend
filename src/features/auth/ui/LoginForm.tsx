@@ -1,14 +1,18 @@
 import { useState, type FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useLogin } from '@/features/auth/model/useLogin'
 import { authApi } from '@/entities/User/api/authApi';
 import styles from './LoginForm.module.scss';
+import { NotFoundPage } from '@/pages/NotFoundPage';
 
 export const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const navigate = useNavigate();
+  const { login } = useLogin()
+  const phone: string | null = null
+
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -19,19 +23,11 @@ export const LoginForm = () => {
 
     setLoading(true);
     setError(null);
-
-    try {
-      const data = await authApi.login(email, password);
-      localStorage.setItem('access_token', data.access_token);
-      navigate('/');
-    } catch (err: any) {
-      setError(err.message || 'Ошибка входа');
-    } finally {
-      setLoading(false);
-    }
+    await login(email, password, phone)
   };
 
   return (
+
     <div className={styles.formContainer}>
       <h1 className={styles.title}>АВТОРИЗАЦИЯ</h1>
       <p className={styles.subtitle}>Чтобы войти в свой аккаунт, заполните поля ниже.</p>
@@ -41,8 +37,8 @@ export const LoginForm = () => {
 
         {/* Инпут Email/Телефон */}
         <div className={styles.inputGroup}>
-          <input 
-            type="text" 
+          <input
+            type="text"
             placeholder="Почтовый адрес или номер телефона"
             value={email}
             onChange={e => setEmail(e.target.value)}
@@ -53,8 +49,8 @@ export const LoginForm = () => {
 
         {/* Инпут Пароля */}
         <div className={styles.inputGroup}>
-          <input 
-            type="password" 
+          <input
+            type="password"
             placeholder="Пароль"
             value={password}
             onChange={e => setPassword(e.target.value)}
@@ -83,7 +79,7 @@ export const LoginForm = () => {
           <button type="submit" disabled={loading} className={styles.btnPrimary}>
             {loading ? 'Загрузка...' : 'Войти'}
           </button>
-          
+
           <Link to="/registration" className={styles.btnSecondary}>
             Регистрация
           </Link>
