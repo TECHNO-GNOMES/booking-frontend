@@ -8,13 +8,13 @@ const RegistrationPage = () => {
     <div className={styles.pageWrapper}>
       <Header />
 
-      <div className={styles.fromSide}>
+      <div className={styles.contentWrapper}>
 
-        <RegisterForm/>
-      </div>
-      <div className={styles.imageSide}>
+        <RegisterForm />
+        <div className={styles.imageSide}>
 
-        {/* ... Картинка с певцом ... */}
+          {/* ... Картинка с певцом ... */}
+        </div>
       </div>
     </div>
   );

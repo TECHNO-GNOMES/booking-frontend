@@ -1,12 +1,16 @@
+import styles from './Button.module.scss'
+
 interface ButtonProps {
-    title: string;
-    style: string;
+    children: React.ReactNode;
+    onClick?: () => void;
+    variant?: 'primary' | 'secondary';
+    size?: 'default' | 'baseline';
 }
 
-function Button({ title, style } : ButtonProps ) {
+function Button({ children, onClick , variant='primary', size='default' } : ButtonProps ) {
     return (
         <>
-            <button className={style}>{title}</button>
+            <button className={`${styles.button} ${styles[variant]} ${styles[size]}`} onClick={onClick}>{children}</button>
         </>
     )
 }

@@ -1,0 +1,48 @@
+@use '@/shared/styles/variables';
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 50px;
+    padding: 21px 80px;
+}
+
+.primary {
+    background: $gradient-btn;
+    color: #FFFFFF;
+}
+
+.secondary {
+    position: relative;
+    background: #FFFFFF;
+    color: rgba(51, 51, 51, 1);
+    border: none;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 2px;
+        background: $gradient-btn;
+
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+
+        pointer-events: none;
+    }
+}
+
+.default {
+    width: fit-content;
+}
+
+.baseline {
+    width: 100%;
+}

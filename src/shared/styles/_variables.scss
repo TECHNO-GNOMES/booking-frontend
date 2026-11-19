@@ -11,17 +11,27 @@ $color-bg-plum: #764678;
 $color-bg-grey: #333333;
 
 // Градиент кнопки
-$gradient-btn: linear-gradient(100deg, #f6a0ba 0%, #c67dd6 50%, #6586ef 100%);
+// $gradient-btn: linear-gradient(100deg, #f6a0ba 0%, #c67dd6 50%, #6586ef 100%);
+$gradient-btn: conic-gradient(from 180deg at 50% 50%, #8E2DBC 0deg, #FFC5BD 120deg, #DB7AE3 240deg, #0066CC 360deg);
 
 // Цвета текстов
-$color-text-dark: Dark;
+$color-text-dark: rgba(51, 51, 51, 1);
 $color-text-black: #333333;
 $color-text-light: Light;
 $color-text-ultralight: Ultralight;
 $color-text-accent: Accent;
 $color-text-action: #0066CC;
+$color-text-regular: rgba(88, 95, 102, 1);
 
 // Input dropdown
 $input-bg-hover: #ECF4FD;
 $input-text-color: #0066CC;
 $input-disabled: #C6C6CC;
+
+//Fonts text
+$font-heading: 'Poiret One'; 
+$font-body: 'Raleway';
+
+
+
+
